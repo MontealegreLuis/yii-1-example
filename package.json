@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "phantomjs-prebuilt": "^2.1.16"
+  },
+  "scripts": {
+    "phantomjs": "phantomjs --webdriver=4444 --webdriver-loglevel=WARNING"
+  }
+}

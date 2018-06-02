@@ -6,17 +6,19 @@ suites:
         modules:
             enabled:
                 - WebDriver:
-                    url: http://localhost:8000
+                    url: http://localhost:8000/index-test.php
                     browser: phantomjs
-                - \Helper\Acceptance
+                    http_proxy: direct
+                - Helper\Acceptance
+        extensions:
+            enabled:
+                - Codeception\Extension\RunProcess:
+                    0: php -S 127.0.0.1:8000 -t public
+                    1: npm run phantomjs
+                    sleep: 3
                 
 extensions:
     enabled: [Codeception\Extension\RunFailed]
-
-params: 
-    - env
-
-gherkin: []    
 
 # additional paths
 paths:
@@ -24,7 +26,6 @@ paths:
     output: tests/_output
     data: tests/_data
     support: tests/_support
-    envs: tests/_envs
 
 settings:
     shuffle: false
