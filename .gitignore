@@ -1,2 +1,4 @@
 vendor
 node_modules
+bin
+public/assets

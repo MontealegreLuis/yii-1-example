@@ -13,9 +13,9 @@ suites:
         extensions:
             enabled:
                 - Codeception\Extension\RunProcess:
-                    0: php -S 127.0.0.1:8000 -t public
+                    0: php -S localhost:8000 -t public
                     1: npm run phantomjs
-                    2: php vendor/bin/codecept clean
+                    2: bin/codecept clean
                     sleep: 2
                 
 extensions:
