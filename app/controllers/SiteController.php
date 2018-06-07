@@ -29,7 +29,7 @@ class SiteController extends Controller
 	{
 		// renders the view file 'app/views/site/index.php'
 		// using the default layout 'app/views/layouts/main.php'
-		$this->render('index');
+		$this->render('index.twig');
 	}
 
 	/**

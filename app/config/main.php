@@ -5,6 +5,8 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
+use Migration\TwigRenderer;
+
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My Web Application',
@@ -32,6 +34,9 @@ return array(
 
 	// application components
 	'components'=>array(
+	    'viewRenderer' => [
+	        'class' => TwigRenderer::class,
+        ],
 
 		'user'=>array(
 			// enable cookie-based authentication

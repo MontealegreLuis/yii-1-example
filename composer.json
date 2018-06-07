@@ -1,6 +1,12 @@
 {
+    "autoload": {
+        "psr-4": {
+            "Migration\\": "src"
+        }
+    },
     "require": {
-        "yiisoft/yii": "^1.1"
+        "yiisoft/yii": "^1.1",
+        "twig/twig": "^2.4"
     },
     "require-dev": {
         "codeception/codeception": "^2.4"
