@@ -25,7 +25,10 @@ class TwigRenderer extends CViewRenderer
         $loader = new Twig_Loader_Filesystem($app->getBasePath() . '/views');
         $this->twig = new Twig_Environment($loader, [
             'cache' => $app->getRuntimePath() . '/twig_cache/',
+            'debug' => true,
         ]);
+        $this->twig->addExtension(new \Twig_Extension_Debug());
+        $this->twig->addGlobal('app', $app);
 
         return parent::init();
     }
