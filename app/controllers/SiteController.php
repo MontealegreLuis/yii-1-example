@@ -7,18 +7,13 @@ class SiteController extends Controller
 	 */
 	public function actions()
 	{
-		return array(
+		return [
 			// captcha action renders the CAPTCHA image displayed on the contact page
-			'captcha'=>array(
+			'captcha'=> [
 				'class'=>'CCaptchaAction',
 				'backColor'=>0xFFFFFF,
-			),
-			// page action renders "static" pages stored under 'app/views/site/pages'
-			// They can be accessed via: index.php?r=site/page&view=FileName
-			'page'=>array(
-				'class'=>'CViewAction',
-			),
-		);
+            ],
+        ];
 	}
 
 	/**
@@ -105,5 +100,10 @@ class SiteController extends Controller
 	{
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
+	}
+
+    public function actionPage()
+    {
+        $this->render('site/pages/' . Yii::app()->request->getQuery('view') . '.twig');
 	}
 }

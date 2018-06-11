@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{{ app.request.baseUrl }}/css/main.css">
     <link rel="stylesheet" type="text/css" href="{{ app.request.baseUrl }}/css/form.css">
 
-    <title>{{ app.name }}</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
